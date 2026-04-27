@@ -1,16 +1,19 @@
-# React + Vite
+# MyProfile - Personal Portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the repository of my personal portfolio website! 
 
-Currently, two official plugins are available:
+This is a highly interactive, minimalist, and Apple-style web experience designed to showcase my skills as a Software Engineer. It highlights my journey, from my academic background in Software Engineering to my hands-on experience in full-stack web development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
+- **Modern UI/UX:** Minimalist design with glassmorphism effects and large typography.
+- **Smooth Animations:** Advanced micro-interactions, scroll animations, and 3D card effects using Framer Motion.
+- **Responsive Design:** Fully optimized for both desktop and mobile experiences.
+- **Dark/Light Mode:** Seamless theme switching.
 
-## React Compiler
+## 🛠️ Built With
+- React / Next.js
+- Tailwind CSS
+- Framer Motion
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 👨‍💻 About Me
+I am a Software Engineer passionate about building efficient, scalable web applications and crafting engaging user interfaces. Feel free to explore my featured projects, including my full-stack platform "SkillSwap MY".
