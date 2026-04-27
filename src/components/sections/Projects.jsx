@@ -18,6 +18,22 @@ const GithubIcon = ({ size = 18 }) => (
   </svg>
 );
 
+const ExternalLinkIcon = ({ size = 18 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M7 17L17 7"></path>
+    <path d="M7 7h10v10"></path>
+  </svg>
+);
+
 const Projects = () => {
   return (
     <section id="projects" className="py-32">
@@ -42,7 +58,7 @@ const Projects = () => {
               <div className="order-2 md:order-1">
                 <div className="flex items-center space-x-3 mb-4">
                   <span className="px-3 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 rounded-full">Node.js</span>
-                  <span className="px-3 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 rounded-full">Boostrap</span>
+                  <span className="px-3 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 rounded-full">Bootstrap</span>
                   <span className="px-3 py-1 text-xs font-medium bg-neutral-100 dark:bg-neutral-800 rounded-full">Express</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold mb-3">SkillSwap MY</h3>
@@ -51,10 +67,15 @@ const Projects = () => {
                   A skill-exchange web project built to practice full-stack development concepts. The project uses a Node.js and Express backend.
                 </p>
 
-                <div className="flex items-center space-x-6">
-                  <a href="https://github.com/JacksonChoo23/SkillSwap" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-sm font-medium hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors">
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://github.com/JacksonChoo23/SkillSwap"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-900 text-white dark:bg-white dark:text-black text-sm font-semibold shadow-lg shadow-black/10 hover:scale-[1.03] transition-transform"
+                  >
                     <GithubIcon size={18} />
-                    <span>View Source</span>
+                    <span>View on GitHub</span>
                   </a>
                 </div>
               </div>
@@ -80,6 +101,10 @@ const Projects = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="absolute inset-0 bg-neutral-900/45 opacity-55 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-5 pointer-events-none">
+                  {/* Removed GitHub Project visual indicator */}
                 </div>
               </div>
             </div>

@@ -1,11 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const skills = [
-  "HTML5", "CSS3", "JavaScript", "Bootstrap 5", "PHP", "MySQL", "Node.js", "Java", "MVC Architecture", "Responsive Web Design", "Windows Server", "TCP/IP", "Git", "Joomla", "iLO4", "Opera PMS", "Infrasys POS"
+const skillGroups = [
+  {
+    title: "Frontend",
+    summary: "Build responsive, modern interfaces with maintainable structure.",
+    color: "from-sky-500/20 to-cyan-500/5",
+    skills: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5", "Responsive Web Design"]
+  },
+  {
+    title: "Backend",
+    summary: "Develop server-side logic and connect data workflows.",
+    color: "from-emerald-500/20 to-lime-500/5",
+    skills: ["PHP", "Node.js", "MySQL", "Java", "MVC Architecture"]
+  },
+  {
+    title: "Infrastructure & Tools",
+    summary: "Support deployment, operations, and collaboration pipelines.",
+    color: "from-amber-500/20 to-rose-500/5",
+    skills: ["Windows Server", "TCP/IP", "Git", "Joomla", "iLO4", "Opera PMS", "Infrasys POS"]
+  }
 ];
-
-const allSkills = [...skills, ...skills, ...skills];
 
 const TechStack = () => {
   return (
@@ -26,57 +41,53 @@ const TechStack = () => {
           viewport={{ once: true }}
           className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto"
         >
-          Technical skills based on my internship and academic experience in software engineering and IT support.
+          A clearer snapshot of the technologies I use across frontend, backend, and IT support scenarios.
         </motion.p>
       </div>
 
-      <div className="relative z-10">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-32 bg-gradient-to-r from-neutral-50 dark:from-neutral-950 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-32 bg-gradient-to-l from-neutral-50 dark:from-neutral-950 to-transparent" />
+      <div className="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {skillGroups.map((group, groupIndex) => (
+            <motion.article
+              key={group.title}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.45, delay: groupIndex * 0.08 }}
+              className="group relative rounded-3xl border border-neutral-200 dark:border-neutral-800 overflow-hidden bg-white/90 dark:bg-neutral-900/70 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${group.color} opacity-70 group-hover:opacity-100 transition-opacity duration-300`} />
 
-        <div className="relative flex overflow-hidden group">
-          <div className="animate-marquee whitespace-nowrap flex space-x-6 md:space-x-8 items-center px-4 md:px-8 py-4 w-max">
-            {allSkills.map((skill, index) => (
-              <div key={`skill-1-${index}`} className="float-y [animation-delay:calc(var(--i)*120ms)]" style={{ '--i': index }}>
-                <div className="flex items-center justify-center min-w-[170px] md:min-w-[220px] h-20 md:h-24 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/90 dark:bg-neutral-900/60 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-none hover:scale-105 hover:-translate-y-1 transition duration-300">
-                  <span className="text-lg md:text-2xl font-semibold tracking-tight text-neutral-700 dark:text-neutral-100">{skill}</span>
+              <div className="relative p-6 md:p-7">
+                <div className="mb-5">
+                  <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-2">Focus Area</p>
+                  <h3 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-2">{group.title}</h3>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{group.summary}</p>
                 </div>
-              </div>
-            ))}
-          </div>
 
-          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex space-x-6 md:space-x-8 items-center px-4 md:px-8 py-4 w-max">
-            {allSkills.map((skill, index) => (
-              <div key={`skill-2-${index}`} className="float-y [animation-delay:calc(var(--i)*140ms)]" style={{ '--i': index }}>
-                <div className="flex items-center justify-center min-w-[170px] md:min-w-[220px] h-20 md:h-24 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/90 dark:bg-neutral-900/60 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-none hover:scale-105 hover:-translate-y-1 transition duration-300">
-                  <span className="text-lg md:text-2xl font-semibold tracking-tight text-neutral-700 dark:text-neutral-100">{skill}</span>
-                </div>
+                <ul className="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <li key={skill}>
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium border border-neutral-300/80 dark:border-neutral-700 bg-white/90 dark:bg-neutral-950/60 text-neutral-700 dark:text-neutral-200 group-hover:border-neutral-400 dark:group-hover:border-neutral-500 transition-colors">
+                        {skill}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
+            </motion.article>
+          ))}
         </div>
 
-        <div className="relative flex overflow-hidden group mt-4 md:mt-6">
-          <div className="animate-marquee-reverse whitespace-nowrap flex space-x-6 md:space-x-8 items-center px-4 md:px-8 py-4 w-max">
-            {[...allSkills].reverse().map((skill, index) => (
-              <div key={`skill-3-${index}`} className="float-y [animation-delay:calc(var(--i)*100ms)]" style={{ '--i': index }}>
-                <div className="flex items-center justify-center min-w-[170px] md:min-w-[220px] h-16 md:h-20 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/85 dark:bg-neutral-900/50 backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.05)] dark:shadow-none hover:scale-105 hover:-translate-y-1 transition duration-300">
-                  <span className="text-base md:text-xl font-semibold tracking-tight text-neutral-700 dark:text-neutral-200">{skill}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="absolute top-0 animate-marquee2-reverse whitespace-nowrap flex space-x-6 md:space-x-8 items-center px-4 md:px-8 py-4 w-max">
-            {[...allSkills].reverse().map((skill, index) => (
-              <div key={`skill-4-${index}`} className="float-y [animation-delay:calc(var(--i)*120ms)]" style={{ '--i': index }}>
-                <div className="flex items-center justify-center min-w-[170px] md:min-w-[220px] h-16 md:h-20 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/85 dark:bg-neutral-900/50 backdrop-blur-sm shadow-[0_8px_24px_rgba(0,0,0,0.05)] dark:shadow-none hover:scale-105 hover:-translate-y-1 transition duration-300">
-                  <span className="text-base md:text-xl font-semibold tracking-tight text-neutral-700 dark:text-neutral-200">{skill}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="text-center text-sm text-neutral-500 dark:text-neutral-400 mt-8"
+        >
+          Each stack area now includes context, so visitors can quickly understand where each skill is applied.
+        </motion.p>
       </div>
     </section>
   );
