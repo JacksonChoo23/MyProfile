@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://JacksonChoo23.github.io/Myprofile/sitemap.xml
